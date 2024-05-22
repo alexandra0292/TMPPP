@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Drug>
+@{
+}
+
+<h2>Drugs</h2>
+
+<a asp-action="AddDrug" asp-controller="Drug" class="btn btn-primary">Add More</a>
+
+@if(Model?.Count()>0)
+{
+    <table class="table table-striped my-2">
+        <tr>
+            <th>Image</th>
+            <th>Drug</th>
+            <th>Producer</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var drug in Model)
+        {
+            <tr>
+                <td>
+                    @if(string.IsNullOrWhiteSpace(drug.Image))
+                    {
+                        <img src="/Images/NoImage0.png" style="width:80px;height:100px" alt="drug image" />
+                    }
+                    else
+                    {
+                        <img src="/images/@drug.Image" style="width:80px;height:100px" alt="drug image" />
+                    }
+                </td>
+                <td>@drug.DrugName</td>
+                <td>@drug.Producer</td>
+                <td>@drug.Genre.CategoryName</td>
+                <td>@drug.Price</td>
+                <td>
+                    <a asp-action="UpdateDrug" asp-controller="Drug" asp-route-id="@drug.Id" class="btn btn-success">Edit</a>
+                    <a asp-action="DeleteDrug" asp-controller="Drug" asp-route-id="@drug.Id" class="btn btn-danger" onclick="return window.confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h3>No records</h3>
+}
+

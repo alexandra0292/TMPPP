@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DrugShoppingCartMvcUI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\DrugShoppingCartMvcUI.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\heart-pulse.svg",
+      "PackagePath": "staticwebassets\\heart-pulse.svg"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\images\\2cb1cb6f-5603-4ef5-b7c2-42b9490cf7ae.png",
+      "PackagePath": "staticwebassets\\images\\2cb1cb6f-5603-4ef5-b7c2-42b9490cf7ae.png"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\images\\6e4783ee-f03a-4ab8-9921-53a0514d92b5.jpg",
+      "PackagePath": "staticwebassets\\images\\6e4783ee-f03a-4ab8-9921-53a0514d92b5.jpg"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\images\\954b2c8a-22c5-47b5-950e-511d9c9fc0d0.png",
+      "PackagePath": "staticwebassets\\images\\954b2c8a-22c5-47b5-950e-511d9c9fc0d0.png"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\images\\NoImage0.png",
+      "PackagePath": "staticwebassets\\images\\NoImage0.png"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\images\\carousel4.png",
+      "PackagePath": "staticwebassets\\images\\carousel4.png"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\images\\carousel5.png",
+      "PackagePath": "staticwebassets\\images\\carousel5.png"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\images\\carousel6.png",
+      "PackagePath": "staticwebassets\\images\\carousel6.png"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\images\\cc169494-42ba-4ac0-af95-7e087ab8627e.png",
+      "PackagePath": "staticwebassets\\images\\cc169494-42ba-4ac0-af95-7e087ab8627e.png"
+    },
+    {
+      "Id": "D:\\Programare\\anul_III\\tmppp\\BookShoppingCart-Mvc\\BookShoppingCartMvcUI\\wwwroot\\images\\ec7f04e2-0a72-4b38-9b3c-996660ed2c09.png",
+      "PackagePath": "staticwebassets\\images\\ec7f04e2-0a72-4b38-9b3c-996660ed2c09.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DrugShoppingCartMvcUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DrugShoppingCartMvcUI.props",
+      "PackagePath": "build\\DrugShoppingCartMvcUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DrugShoppingCartMvcUI.props",
+      "PackagePath": "buildMultiTargeting\\DrugShoppingCartMvcUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DrugShoppingCartMvcUI.props",
+      "PackagePath": "buildTransitive\\DrugShoppingCartMvcUI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

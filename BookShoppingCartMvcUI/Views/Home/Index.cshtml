@@ -1,0 +1,141 @@
+﻿@model DrugDisplayModel
+@{
+
+}
+
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/images/carousel4.png" class="d-block w-100" alt="Image">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/carousel5.png" class="d-block w-100" alt="Image">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/carousel6.png" class="d-block w-100" alt="Image">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="my-2">
+    <form asp-action="Index" class="row row-cols-lg-auto g-3 align-items-center">
+        <div class="col-12">
+            <label class="visually-hidden" for="genreId">Category</label>
+            <select class="form-select" id="genreId" name="genreId">
+                <option selected>Category</option>
+                @foreach (var genre in Model.Genres)
+                {
+                    <option selected="@(genre.Id == Model.CategoryId)" value="@genre.Id">@genre.CategoryName</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-12">
+            <label class="visually-hidden" for="sterm">Search by name</label>
+            <div class="input-group">
+                <div class="input-group-text"></div>
+                <input type="text" class="form-control" value="@Model.STerm" id="sterm" name="sterm" placeholder="Search by name">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="/Home/Index" class="btn btn-dark">Reset</a>
+        </div>
+    </form>
+</div>
+
+<div class="w-100 mt-4 d-flex flex-wrap ">
+    @foreach (var drug in Model.Drugs)
+    {
+        <div class="card mx-3 mb-4" style="width: 11rem;">
+            @if (string.IsNullOrEmpty(drug.Image))
+            {
+                <img style="width:100%;height:180px" src="/images/NoImage0.png" class="card-img-top" alt="...">
+
+            }
+            else
+            {
+                <img style="width:100%;height:180px" src="/images/@drug.Image" class="card-img-top" alt="...">
+            }
+            <div class="card-body">
+                <h5 class="card-title">@drug.DrugName</h5>
+                <p class="card-text">
+                    <b>Category: </b>@drug.GenreName <br />
+                    <b>Producer: </b>@drug.Producer <br />
+                    <b>Price: </b>@drug.Price $
+     
+                </p>
+                @if (drug.Quantity > 0)
+                {
+                    <button type="button" onclick="add(@drug.Id)" class="btn btn-primary">Add to cart</button>
+                }
+                else
+                {
+                    <span style="border: 1px solid;padding: 5px 8px;color: red;border-radius: 5px;">Out of stock</span>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Open Pharmacy</th>
+            <th scope="col">Discover</th>
+            <th scope="col">Contacts</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="https://ff.md/">FarmaciaFamiliei.md</a></td>
+            <td><a href="https://www.healthline.com/nutrition/herbal-medicine">Popular Herbal Medicines</a></td>
+            <td>alexandra.taranu@isa.utm.md</td>
+        </tr>
+        <tr>
+            <td><a href="https://hippocrates.md/">Hippocrates</a></td>
+            <td><a href="https://medium.com/legacyhealingcenterlb/understanding-drug-classifications-692da5805361">Understanding Drug Classifications</a></td>
+            <td>Group: TI-211</td>
+        </tr>
+    </tbody>
+</table>
+
+
+@section Scripts{
+    <script>
+        async function add(drugId) {
+             var usernameEl = document.getElementById("username");
+        if(usernameEl==null){
+            window.location.href = "/Identity/Account/Login";
+          //var username=usernameEl.innerText;
+          //  if(username.length<1){
+          //      window.location.href="/Identity/Account/Login";
+          //  }
+        }
+            try {
+                var response = await fetch(`/Cart/AddItem?drugId=${drugId}`);
+                if (response.status == 200) {
+                    var result = await response.json();
+                    var cartCountEl = document.getElementById("cartCount");
+                    cartCountEl.innerHTML = result;
+                    window.location.href = "#cartCount";
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+}
+
+
